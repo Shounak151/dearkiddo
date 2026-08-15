@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hey Tuli 👀</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating decorations -->
+    <div class="decorations">
+        <span>🌸</span>
+        <span>✨</span>
+        <span>🌼</span>
+        <span>⭐</span>
+        <span>🪔</span>
+        <span>✨</span>
+    </div>
+
+
+    <!-- ================= PAGE 1 ================= -->
+
+    <div class="page active" id="page1">
+
+        <div class="card">
+
+            <div class="small-title">
+                A tiny question for you 👀
+            </div>
+
+            <h1>
+                Hey Tuli!
+            </h1>
+
+            <p class="main-text">
+                Can I ask you something?
+            </p>
+
+            <div class="buttons">
+
+                <button
+                    class="yes-btn"
+                    onclick="goToPage(2)"
+                >
+                    Yeah, tell me 😌
+                </button>
+
+                <button
+                    class="no-btn"
+                    id="noBtn1"
+                >
+                    Nope 
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAGE 2 ================= -->
+
+    <div class="page" id="page2">
+
+        <div class="card">
+
+            <div class="small-title">
+                Okay, hear me out...
+            </div>
+
+            <h1>
+                So... 👀
+            </h1>
+
+            <p>
+                You seem like someone who's actually
+                pretty and you are just amazing in every way possible. You looks very well in saree
+            </p>
+
+            <p>
+                Also, you have a pretty nice smile...
+                just saying. 😌
+            </p>
+
+            <p>
+                You have such a genuinely good heart.The way you care about people, the kindness you show
+                and the person you are from the inside make you truly beautiful.
+            </p>
+
+            <p>
+                And honestly, you're just an amazing person. Not because you're perfect, but because you're you — kind, caring, genuine, and wonderfully yoursel
+            </p>
+
+            <div class="question-box">
+
+                <h2>
+                    Kya mere saath Pujo mein ek din
+                    ghumne chalogi? 🌸
+                </h2>
+
+            </div>
+
+            <div class="buttons">
+
+                <button
+                    class="yes-btn"
+                    onclick="goToPage(3)"
+                >
+                    Haan, chalo 😌
+                </button>
+
+                <button
+                    class="no-btn"
+                    id="noBtn2"
+                >
+                    Hmm... no 😂
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAGE 3 ================= -->
+
+    <div class="page" id="page3">
+
+        <div class="card">
+
+            <div class="small-title">
+                Step 1 of the very serious plan 😌
+            </div>
+
+            <h1>
+                Pick a Pujo day
+            </h1>
+
+            <p>
+                Which day works for you?
+            </p>
+
+            <div class="options">
+
+                <button
+                    onclick="selectDate(this, 'Panchami')"
+                >
+                    🌸 Panchami
+                </button>
+
+                <button
+                    onclick="selectDate(this, 'Shashti')"
+                >
+                    🌼 Shashti
+                </button>
+
+                <button
+                    onclick="selectDate(this, 'Saptami')"
+                >
+                    🪷 Saptami
+                </button>
+
+                <button
+                    onclick="selectDate(this, 'Ashtami')"
+                >
+                    🌺 Ashtami
+                </button>
+
+                <button
+                    onclick="selectDate(this, 'Navami')"
+                >
+                    ✨ Navami
+                </button>
+
+            </div>
+
+            <button
+                class="continue"
+                onclick="goToPage(4)"
+            >
+                Next →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAGE 4 ================= -->
+
+    <div class="page" id="page4">
+
+        <div class="card">
+
+            <div class="small-title">
+                Step 2 — equally important
+            </div>
+
+            <h1>
+                What's the plan? 👀
+            </h1>
+
+            <p>
+                You get to choose.
+            </p>
+
+            <div class="options">
+
+                <button
+                    onclick="selectActivity(this, 'Dinner')"
+                >
+                    🍽️ Food obviously
+                </button>
+
+                <button
+                    onclick="selectActivity(this, 'Movie')"
+                >
+                    🎬 Movie
+                </button>
+
+                <button
+                    onclick="selectActivity(this, 'Pandal Hopping')"
+                >
+                    🪔 Pandal Hopping
+                </button>
+
+                <button
+                    onclick="selectActivity(this, 'Surprise Me')"
+                >
+                    🎁 Surprise me
+                </button>
+
+            </div>
+
+            <button
+                class="continue"
+                onclick="finishPlan()"
+            >
+                Okay, it's a plan 😌
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= PAGE 5 ================= -->
+
+    <div class="page" id="page5">
+
+        <div class="card final-card">
+
+            <div class="celebrate">
+                🎊
+            </div>
+
+            <div class="small-title">
+                PLAN CONFIRMED
+            </div>
+
+            <h1>
+                Looks like we have a plan!
+            </h1>
+
+            <p class="final-intro">
+                No backing out now... 😂
+            </p>
+
+
+            <!-- Cute panda -->
+
+            <div class="pandas">
+
+                <div class="panda-container">
+
+                    <div class="panda">
+                        🐼
+                    </div>
+
+                    <div class="panda">
+                        🐼
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Selected details -->
+
+            <div class="plan-details">
+
+                <div class="detail-box">
+
+                    <span class="detail-icon">
+                        🪔
+                    </span>
+
+                    <div>
+
+                        <small>
+                            PUJO DAY
+                        </small>
+
+                        <strong id="finalDate">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="detail-box">
+
+                    <span class="detail-icon">
+                        🎯
+                    </span>
+
+                    <div>
+
+                        <small>
+                            THE PLAN
+                        </small>
+
+                        <strong id="finalActivity">
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="final-message">
+
+                <h2>
+                    Pujo plan: officially locked. 🪔
+                </h2>
+
+                <p>
+                    Now you can't say you didn't have plans. 😂
+                </p>
+
+                <p>
+                    See you then, Tuli! ✌️
+                </p>
+
+            </div>
+
+
+            <div class="tiny-note">
+
+                🌸 Good choice 🌸
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= EMAILJS ================= -->
+
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+
+    <script>
+
+        emailjs.init({
+            publicKey: "5vGLusgF_85zCnXbf"
+        });
+
+    </script>
+
+
+    <!-- YOUR JAVASCRIPT -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

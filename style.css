@@ -1,0 +1,762 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ================= BODY ================= */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    min-height: 100vh;
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff8ed,
+            #fff1f5,
+            #f4f8ff
+        );
+
+    color: #444;
+
+    overflow: hidden;
+}
+
+
+/* ================= DECORATIONS ================= */
+
+.decorations span {
+
+    position: fixed;
+
+    font-size: 25px;
+
+    opacity: 0.45;
+
+    pointer-events: none;
+
+    animation:
+        floating 6s ease-in-out infinite;
+
+}
+
+
+.decorations span:nth-child(1) {
+    left: 8%;
+    top: 15%;
+}
+
+.decorations span:nth-child(2) {
+    left: 85%;
+    top: 20%;
+}
+
+.decorations span:nth-child(3) {
+    left: 12%;
+    top: 75%;
+}
+
+.decorations span:nth-child(4) {
+    left: 82%;
+    top: 75%;
+}
+
+.decorations span:nth-child(5) {
+    left: 50%;
+    top: 8%;
+}
+
+.decorations span:nth-child(6) {
+    left: 45%;
+    top: 90%;
+}
+
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+
+}
+
+
+/* ================= PAGE ================= */
+
+.page {
+
+    display: none;
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+}
+
+
+.page.active {
+
+    display: flex;
+
+    animation:
+        pageAppear 0.45s ease;
+
+}
+
+
+@keyframes pageAppear {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* ================= CARD ================= */
+
+.card {
+
+    width: 90%;
+
+    max-width: 600px;
+
+    padding: 45px 35px;
+
+    text-align: center;
+
+    background:
+        rgba(255, 255, 255, 0.95);
+
+    border-radius: 28px;
+
+    border:
+        2px solid #f1d7c5;
+
+    box-shadow:
+        0 15px 40px
+        rgba(100, 80, 70, 0.12);
+
+}
+
+
+/* ================= TEXT ================= */
+
+.small-title {
+
+    font-size: 13px;
+
+    color: #ad7a62;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 12px;
+
+    font-weight: 600;
+
+}
+
+
+h1 {
+
+    font-size: 40px;
+
+    color: #765548;
+
+    margin-bottom: 20px;
+
+}
+
+
+h2 {
+
+    color: #765548;
+
+    line-height: 1.5;
+
+    margin: 15px 0;
+
+}
+
+
+p {
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+    color: #666;
+
+    margin: 12px 0;
+
+}
+
+
+.main-text {
+
+    font-size: 22px;
+
+}
+
+
+/* ================= QUESTION ================= */
+
+.question-box {
+
+    background:
+        #fff7ed;
+
+    border-radius: 20px;
+
+    padding: 10px 20px;
+
+    margin: 25px 0;
+
+    border:
+        1px dashed #dfbda7;
+
+}
+
+
+/* ================= BUTTONS ================= */
+
+.buttons {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 12px;
+
+    margin-top: 25px;
+
+}
+
+
+button {
+
+    border: none;
+
+    padding: 14px 24px;
+
+    border-radius: 30px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+
+}
+
+
+button:hover {
+
+    transform:
+        translateY(-3px);
+
+}
+
+
+/* ================= YES BUTTON ================= */
+
+.yes-btn {
+
+    background:
+        #8bbf9f;
+
+    color: white;
+
+    box-shadow:
+        0 6px 15px
+        rgba(100, 150, 120, 0.2);
+
+}
+
+
+/* ================= NO BUTTON ================= */
+
+.no-btn {
+
+    background:
+        #e5a18b;
+
+    color: white;
+
+    z-index: 1000;
+
+}
+
+
+/* ================= OPTIONS ================= */
+
+.options {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 7px;
+
+    margin-top: 20px;
+
+}
+
+
+.options button {
+
+    width: 280px;
+
+    background:
+        #f4d7bd;
+
+    color:
+        #654c40;
+
+}
+
+
+.options button:hover {
+
+    background:
+        #edc4a5;
+
+}
+
+
+.options button.selected {
+
+    background:
+        #8bbf9f;
+
+    color: white;
+
+    transform:
+        scale(1.04);
+
+}
+
+
+/* ================= CONTINUE ================= */
+
+.continue {
+
+    margin-top: 25px;
+
+    background:
+        #765548;
+
+    color: white;
+
+}
+
+
+.continue:hover {
+
+    background:
+        #5f4439;
+
+}
+
+
+/* ================= FINAL PAGE ================= */
+
+.final-card {
+
+    position: relative;
+
+    overflow: hidden;
+
+}
+
+
+.celebrate {
+
+    font-size: 35px;
+
+    animation:
+        bounce 1.4s ease-in-out infinite;
+
+}
+
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-8px);
+    }
+
+}
+
+
+.final-intro {
+
+    font-size: 17px;
+
+    color:
+        #8a7166;
+
+}
+
+
+/* ================= PANDA ================= */
+
+.pandas {
+
+    margin:
+        18px 0;
+
+}
+
+
+.panda-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+.panda {
+
+    width: 100px;
+
+    height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        #f7eee7;
+
+    border-radius: 50%;
+
+    font-size: 60px;
+
+    animation:
+        pandaBounce 2s ease-in-out infinite;
+
+}
+
+
+.panda:nth-child(2) {
+
+    animation-delay:
+        0.3s;
+
+}
+
+
+@keyframes pandaBounce {
+
+    0%,
+    100% {
+        transform:
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translateY(-7px);
+    }
+
+}
+
+
+/* ================= PLAN DETAILS ================= */
+
+.plan-details {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    margin:
+        25px 0;
+
+}
+
+
+.detail-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    background:
+        #fff7ed;
+
+    border:
+        1px solid #ead7c7;
+
+    border-radius:
+        15px;
+
+    padding:
+        15px;
+
+    width:
+        45%;
+
+    text-align:
+        left;
+
+}
+
+
+.detail-icon {
+
+    font-size:
+        30px;
+
+}
+
+
+.detail-box small {
+
+    display:
+        block;
+
+    font-size:
+        10px;
+
+    color:
+        #a58a7d;
+
+    margin-bottom:
+        5px;
+
+    letter-spacing:
+        1px;
+
+}
+
+
+.detail-box strong {
+
+    display:
+        block;
+
+    color:
+        #765548;
+
+    font-size:
+        17px;
+
+}
+
+
+/* ================= FINAL MESSAGE ================= */
+
+.final-message {
+
+    margin-top:
+        20px;
+
+}
+
+
+.final-message h2 {
+
+    font-size:
+        20px;
+
+}
+
+
+.final-message p {
+
+    font-size:
+        16px;
+
+}
+
+
+/* ================= BOTTOM NOTE ================= */
+
+.tiny-note {
+
+    margin-top:
+        25px;
+
+    padding-top:
+        15px;
+
+    border-top:
+        1px dashed #dec9bb;
+
+    color:
+        #a08070;
+
+    font-size:
+        14px;
+
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 600px) {
+
+    .card {
+
+        width:
+            94%;
+
+        padding:
+            35px 18px;
+
+    }
+
+
+    h1 {
+
+        font-size:
+            31px;
+
+    }
+
+
+    h2 {
+
+        font-size:
+            20px;
+
+    }
+
+
+    p {
+
+        font-size:
+            16px;
+
+    }
+
+
+    .main-text {
+
+        font-size:
+            20px;
+
+    }
+
+
+    .buttons {
+
+        flex-wrap:
+            wrap;
+
+    }
+
+
+    button {
+
+        font-size:
+            15px;
+
+        padding:
+            12px 20px;
+
+    }
+
+
+    .options button {
+
+        width:
+            240px;
+
+    }
+
+
+    .plan-details {
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+    }
+
+
+    .detail-box {
+
+        width:
+            90%;
+
+    }
+
+
+    .panda {
+
+        width:
+            80px;
+
+        height:
+            80px;
+
+        font-size:
+            48px;
+
+    }
+
+}
