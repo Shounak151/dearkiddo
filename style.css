@@ -26,7 +26,8 @@ body {
 
     color: #444;
 
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 
@@ -513,6 +514,120 @@ button:hover {
     50% {
         transform:
             translateY(-7px);
+    }
+
+}
+
+@media (max-width: 640px) {
+
+    .page {
+        padding: 16px 12px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 100%;
+        padding: 30px 18px;
+        border-radius: 22px;
+    }
+
+    .small-title {
+        font-size: 11px;
+        letter-spacing: 1.2px;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 30px;
+        margin-bottom: 14px;
+    }
+
+    h2 {
+        font-size: 22px;
+        line-height: 1.4;
+        margin: 12px 0;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 1.6;
+        margin: 10px 0;
+    }
+
+    .main-text {
+        font-size: 18px;
+    }
+
+    .question-box {
+        padding: 12px 14px;
+        margin: 18px 0;
+    }
+
+    .buttons {
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 22px;
+    }
+
+    .buttons button,
+    .options button,
+    .continue {
+        width: 100%;
+        max-width: 290px;
+    }
+
+    .options {
+        margin-top: 18px;
+    }
+
+    .options button {
+        width: 100%;
+        max-width: 290px;
+        padding: 12px 20px;
+    }
+
+    .continue {
+        margin-top: 20px;
+    }
+
+    .celebrate {
+        font-size: 28px;
+    }
+
+    .final-intro {
+        font-size: 15px;
+    }
+
+    .panda {
+        width: 80px;
+        height: 80px;
+        font-size: 48px;
+    }
+
+    .panda-container {
+        gap: 12px;
+    }
+
+}
+
+@media (max-width: 420px) {
+
+    .card {
+        padding: 26px 14px;
+    }
+
+    h1 {
+        font-size: 26px;
+    }
+
+    .buttons button,
+    .options button,
+    .continue {
+        max-width: 100%;
+    }
+
+    .small-title {
+        font-size: 10px;
     }
 
 }
