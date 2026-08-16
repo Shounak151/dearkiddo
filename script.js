@@ -6,6 +6,72 @@ let selectedDate = "";
 
 let selectedActivity = "";
 
+const noBtn1 =
+    document.getElementById("noBtn1");
+
+const yesBtn1 =
+    document.querySelector("#page1 .yes-btn");
+
+const firstPageMessage =
+    document.getElementById("firstPageMessage");
+
+let firstPageNoClickCount = 0;
+
+const firstPageMessages = [
+    "Are you sure? 👀",
+    "Better say yes 😌",
+    "Please :(",
+    "Don't do this 😭",
+    "I'm gonna cry 🥺",
+    "💔 <3"
+];
+
+if (noBtn1) {
+
+    noBtn1.style.position = "static";
+    noBtn1.style.left = "auto";
+    noBtn1.style.top = "auto";
+
+    noBtn1.addEventListener(
+        "click",
+        function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+            firstPageNoClickCount += 1;
+
+            const nextScale =
+                Math.min(
+                    1.08 + firstPageNoClickCount * 0.08,
+                    1.4
+                );
+
+            if (yesBtn1) {
+
+                yesBtn1.style.transform = "scale(" + nextScale + ")";
+
+            }
+
+            if (firstPageMessage) {
+
+                firstPageMessage.textContent =
+                    firstPageMessages[
+                        Math.min(
+                            firstPageNoClickCount - 1,
+                            firstPageMessages.length - 1
+                        )
+                    ];
+
+                firstPageMessage.hidden = false;
+
+            }
+
+        }
+    );
+
+}
+
 
 // ==========================================
 // GO TO PAGE
@@ -86,43 +152,6 @@ function moveNoButton(button) {
 
     button.style.top =
         randomY + "px";
-
-}
-
-
-// ==========================================
-// PAGE 1 NO BUTTON
-// ==========================================
-
-const noBtn1 =
-    document.getElementById("noBtn1");
-
-
-if (noBtn1) {
-
-    noBtn1.addEventListener(
-        "mouseenter",
-        function () {
-
-            moveNoButton(noBtn1);
-
-        }
-    );
-
-
-    noBtn1.addEventListener(
-        "touchstart",
-        function (event) {
-
-            event.preventDefault();
-
-            moveNoButton(noBtn1);
-
-        },
-        {
-            passive: false
-        }
-    );
 
 }
 

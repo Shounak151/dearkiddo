@@ -41,6 +41,13 @@
                 Can I ask you something?
             </p>
 
+            <div
+                class="first-page-message"
+                id="firstPageMessage"
+                aria-live="polite"
+                hidden
+            ></div>
+
             <div class="buttons">
 
                 <button
@@ -387,6 +394,46 @@
     <!-- YOUR JAVASCRIPT -->
 
     <script src="script.js"></script>
+
+    <script>
+        (function () {
+            const noBtn1 = document.getElementById('noBtn1');
+            const yesBtn1 = document.querySelector('#page1 .yes-btn');
+            const firstPageMessage = document.getElementById('firstPageMessage');
+            const firstPageMessages = [
+                "Aww, c'mon 😌",
+                "Nope? I’m still pretty convinced 😄",
+                "That was a dramatic no 😂",
+                "Still no? You’re making this harder than it needs to be 😌"
+            ];
+
+            let firstPageNoClickCount = 0;
+
+            if (noBtn1) {
+                noBtn1.style.position = 'static';
+                noBtn1.style.left = 'auto';
+                noBtn1.style.top = 'auto';
+
+                noBtn1.addEventListener('click', function (event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    firstPageNoClickCount += 1;
+
+                    const nextScale = Math.min(1.12 + firstPageNoClickCount * 0.08, 1.6);
+
+                    if (yesBtn1) {
+                        yesBtn1.style.transform = 'scale(' + nextScale + ')';
+                    }
+
+                    if (firstPageMessage) {
+                        firstPageMessage.textContent = firstPageMessages[(firstPageNoClickCount - 1) % firstPageMessages.length];
+                        firstPageMessage.hidden = false;
+                    }
+                });
+            }
+        })();
+    </script>
 
 </body>
 
